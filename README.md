@@ -1,96 +1,66 @@
-# Obsidian Sample Plugin
+<p align="center">
+  <h1 align="center">Enhanced Headers</h1>
+  <p align="center">Get a quick overview of all incoming and outgoing links.</p>
+</p>
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+<p align="center">
+  <img src="https://github.com/SolomonRosemite/obsidian-enhanced-headers/blob/stable/assets/2.png?raw=true" width="350" />
+  <img src="https://github.com/SolomonRosemite/obsidian-enhanced-headers/blob/stable/assets/1.png?raw=true" width="350" />
+</p>
 
-This project uses Typescript to provide type checking and documentation.
-The repo depends on the latest plugin API (obsidian.d.ts) in Typescript Definition format, which contains TSDoc comments describing what it does.
+> [!WARNING]
+> **This project is still unstable and subject to Obsidian updates, which could cause the plugin to stop working.**
 
-**Note:** The Obsidian API is still in early alpha and is subject to change at any time!
+## Why
+In Obsidian, backlinks are typically visible only in the right panel or at the bottom of the file. This always bothered me, as I wanted a quick and easily accessible overview of incoming links (backlinks) and outgoing links. This plugin addresses that need by allowing you to have this information readily available at the top of your markdown files.
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
-- Adds a ribbon icon, which shows a Notice when clicked.
-- Adds a command "Open Sample Modal" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
-- Registers a global click event and output 'click' to the console.
-- Registers a global interval which logs 'setInterval' to the console.
+## Current features
 
-## First time developing plugins?
+As of the time of writing, this plugins is very simple and allows...
 
-Quick starting guide for new plugin devs:
+- showing backlinks and outgoing links in the headers at the top of your note.
+- sticking the header to the top of the screen when scrolling
+- other small customizable options
 
-- Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
-- Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder. For convenience, you can place this folder in your `.obsidian/plugins/your-plugin-name` folder.
-- Install NodeJS, then run `npm i` in the command line under your repo folder.
-- Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
-- Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
-- Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
-- For updates to the Obsidian API run `npm update` in the command line under your repo folder.
+## Future planned features
 
-## Releasing new releases
+- [ ] Fully customizable control to put any content in the headers
+- [ ] Enable customizable for links colors
 
-- Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
-- Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
-- Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
-- Publish the release.
+## Installation via BRAT
+Since this plugin is not available on the Community Store, you can install it via the BRAT plugin. Follow these steps to get it up and running:
 
-> You can simplify the version bump process by running `npm version patch`, `npm version minor` or `npm version major` after updating `minAppVersion` manually in `manifest.json`.
-> The command will bump version in `manifest.json` and `package.json`, and add the entry for the new version to `versions.json`
+1. Install BRAT Plugin:
+	- Open Obsidian.
+	- Go to Settings > Community Plugins.
+	- Click on Browse.
+	- Search for BRAT and install it.
+	- Enable the BRAT plugin.
 
-## Adding your plugin to the community plugin list
+2. Add Your Plugin Repository:
+	- After enabling BRAT, go to Settings > BRAT.
+	- In the Repositories section, add the following URL:
+		```bash
+		https://github.com/SolomonRosemite/obsidian-enhanced-headers
+		```
+	- Click Add Repository.
 
-- Check https://github.com/obsidianmd/obsidian-releases/blob/master/plugin-review.md
-- Publish an initial version.
-- Make sure you have a `README.md` file in the root of your repo.
-- Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
+3. Install the Enhanced Headers Plugin:
+	- Go to Settings > BRAT > Plugins.
+	- You should see Enhanced Headers in the list of available plugins.
+	- Click Install next to Enhanced Headers.
 
-## How to use
+4. Enable the Plugin:
+	- After installation, ensure that the plugin is enabled by going to Settings > Community Plugins.
+	- Find Enhanced Headers in the list and toggle it to enable.
 
-- Clone this repo.
-- Make sure your NodeJS is at least v16 (`node --version`).
-- `npm i` or `yarn` to install dependencies.
-- `npm run dev` to start compilation in watch mode.
+5. Configure the Plugin:
+	- Navigate to Settings > Enhanced Headers to configure the plugin according to your preferences and enjoy.
 
-## Manually installing the plugin
+<hr>
 
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
-
-## Improve code quality with eslint (optional)
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
-- To use eslint with this project, make sure to install eslint from terminal:
-  - `npm install -g eslint`
-- To use eslint to analyze this project use this command:
-  - `eslint main.ts`
-  - eslint will then create a report with suggestions for code improvement by file and line number.
-- If your source code is in a folder, such as `src`, you can use eslint with this command to analyze all files in that folder:
-  - `eslint .\src\`
-
-## Funding URL
-
-You can include funding URLs where people who use your plugin can financially support it.
-
-The simple way is to set the `fundingUrl` field to your link in your `manifest.json` file:
-
-```json
-{
-    "fundingUrl": "https://buymeacoffee.com"
-}
-```
-
-If you have multiple URLs, you can also do:
-
-```json
-{
-    "fundingUrl": {
-        "Buy Me a Coffee": "https://buymeacoffee.com",
-        "GitHub Sponsor": "https://github.com/sponsors",
-        "Patreon": "https://www.patreon.com/"
-    }
-}
-```
-
-## API Documentation
-
-See https://github.com/obsidianmd/obsidian-api
+<p align="center">
+<sub>Copyright © 2024-present, Solomon Rosemite</sub>
+</p>
+<p align="center">Enhanced Headers <a href="https://github.com/SolomonRosemite/obsidian-enhanced-headers/blob/stable/LICENSE">is MIT licensed</a>
+</p>

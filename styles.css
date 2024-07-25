@@ -1,8 +1,22 @@
-/*
+.my-plugin-backlinks {
+	display: flex;
+	justify-content: center;
+	font-size: 14px;
+	gap: 5px;
+	text-align: center;
+	padding: 0 calc(var(--size-4-3) * 2);
+	flex-wrap: wrap;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+.my-plugin-group-title {
+	text-align: center;
+	margin: 0;
+}
 
-If your plugin does not need CSS, delete this file.
+.my-plugin-group {
+	margin-bottom: var(--size-4-3);
 
-*/
+	hr {
+		margin: 10px 0 !important;
+	}
+}
