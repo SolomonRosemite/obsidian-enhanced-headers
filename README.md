@@ -25,7 +25,7 @@ As of the time of writing, this plugins is very simple and allows...
 ## Future planned features
 
 - [ ] Fully customizable control to put any content in the headers
-- [ ] Enable customizable for links colors
+- [ ] Enable customizable colors for links
 
 ## Installation via BRAT
 Since this plugin is not available on the Community Store, you can install it via the BRAT plugin. Follow these steps to get it up and running:
