@@ -1,4 +1,4 @@
-.my-plugin-backlinks {
+.obsidian-enhanced-headers-backlinks {
 	display: flex;
 	justify-content: center;
 	font-size: 14px;
@@ -8,12 +8,12 @@
 	flex-wrap: wrap;
 }
 
-.my-plugin-group-title {
+.obsidian-enhanced-headers-group-title {
 	text-align: center;
 	margin: 0;
 }
 
-.my-plugin-group {
+.obsidian-enhanced-headers-group {
 	margin-bottom: var(--size-4-3);
 
 	hr {

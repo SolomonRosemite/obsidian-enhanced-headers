@@ -1,4 +1,4 @@
-const PREFIX = "my-plugin-";
+const PREFIX = "obsidian-enhanced-headers-";
 
 export const Classes = {
 	backlinks: (addPeriod?: boolean) =>
