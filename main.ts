@@ -35,6 +35,8 @@ export default class BacklinkPlugin extends Plugin {
 		this.registerEvent(
 			this.app.vault.on("modify", this.handleContentChange.bind(this)),
 		);
+
+		this.handleActiveNoteChange.bind(this)
 	}
 
 	onunload() {
