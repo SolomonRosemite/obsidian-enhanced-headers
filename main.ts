@@ -118,7 +118,7 @@ export default class BacklinkPlugin extends Plugin {
 		const linkSet = new Set<string>();
 		const unlinkedLinkSet = new Set<string>();
 		for (let linkedFile in resolvedLinks) {
-			if (resolvedLinks[linkedFile][file.path]) {
+			if (resolvedLinks[linkedFile][file.path] && file.path != linkedFile) {
 				backlinkSet.add(linkedFile);
 			}
 			if (resolvedLinks[file.path][linkedFile]) {
